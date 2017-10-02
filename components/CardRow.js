@@ -11,9 +11,9 @@ const CardRow = (props) => {
   // const style = getCardStyle(card)
   return (
     <View style={styles.cardRow}>
-      <Card rotate={180}/>
-      <Card/>
-      <Card/>
+      {props.cards.map((card) => (
+        <Card card={card} key={card.id}/>
+      ))}
     </View>
 
   );

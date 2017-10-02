@@ -1,33 +1,28 @@
-import React from 'react';
+import React, { Component } from 'react';
 import { StyleSheet, Text, View } from 'react-native';
 import { createStore } from 'redux';
 import { Provider } from 'react-redux';
-// import reducer from './reducers';
+import reducer from './reducers/rootReducer';
 import Header from './components/Header';
 import ShuffleButton from './components/ShuffleButton';
 import GameContainer from './components/GameContainer';
 import CardRow from './components/CardRow';
 
-export default class App extends React.Component {
+class App extends Component {
   render() {
     return (
-      // <Provider store={createStore(reducer)}>
+      <Provider store={createStore(reducer)}>
         <View style={styles.container}>
           <Header title="Memory Game"/>
           <View style={{flex: 10}}>
             <ShuffleButton/>
-            <GameContainer>
-              <CardRow/>
-              <CardRow/>
-              <CardRow/>
-              <CardRow/>
-            </GameContainer>
+            <GameContainer/>
           </View>
           {/* <Text>Open up App.js to start working on your app!</Text>
           <Text>Changes you make will automatically reload.</Text>
           <Text>Shake your phone to open the developer menu.</Text> */}
         </View>
-      // </Provider>
+      </Provider>
     );
   }
 }
@@ -41,3 +36,5 @@ const styles = StyleSheet.create({
     justifyContent: 'flex-start',
   },
 });
+
+export default App;

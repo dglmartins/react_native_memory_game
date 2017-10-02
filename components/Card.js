@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import { StyleSheet, Text, View, Image, Animated, TouchableOpacity } from 'react-native';
 import colors from '../utils/colors';
+import { getCardStyle } from '../utils/helpers';
+
 // import peppa from '../images/peppa.png';
 
 
@@ -10,7 +12,7 @@ import colors from '../utils/colors';
 class Card extends Component {
 
   state = {
-    rotateAnim: new Animated.Value(0)
+    rotateAnim: new Animated.Value(0),
   }
 
   onClickCard = () => {
@@ -29,6 +31,9 @@ class Card extends Component {
   // const { card, handleCardClick } = props;
   // const style = getCardStyle(card)
   render () {
+    // console.log(this.state);
+    console.log(this.props.card);
+    const style = getCardStyle(this.props.card);
     const rotateY = this.state.rotateAnim.interpolate({
       inputRange: [0, 1],
       outputRange: ['0deg', '180deg']
@@ -38,7 +43,7 @@ class Card extends Component {
       <TouchableOpacity onPress={this.onClickCard} style={styles.card} >
         <Animated.View style={[styles.card, {transform: [{ rotateY }]}]}>
           <Image
-            source={require('../images/peppa.png')}
+            source={style.backgroundImage}
             style={styles.image}
           />
         </Animated.View>

@@ -2,8 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="fcea7613-466c-4078-a33a-fc8560cfa485" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/App.js" afterPath="$PROJECT_DIR$/App.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/components/Card.js" afterPath="$PROJECT_DIR$/components/Card.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/components/CardRow.js" afterPath="$PROJECT_DIR$/components/CardRow.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/components/GameContainer.js" afterPath="$PROJECT_DIR$/components/GameContainer.js" />
     </list>
     <ignored path="peppa-memory-game.iws" />
     <ignored path=".idea/workspace.xml" />
