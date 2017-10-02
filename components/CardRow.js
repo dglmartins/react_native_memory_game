@@ -11,9 +11,9 @@ const CardRow = (props) => {
   // const style = getCardStyle(card)
   return (
     <View style={styles.cardRow}>
-      <Card word="test"/>
-      <Card word="whaaaat"/>
-      <Card word="thisssss"/>
+      <Card rotate={180}/>
+      <Card/>
+      <Card/>
     </View>
 
   );

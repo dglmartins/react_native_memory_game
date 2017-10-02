@@ -1,26 +1,63 @@
-import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import React, { Component } from 'react';
+import { StyleSheet, Text, View, Image, Animated, TouchableOpacity } from 'react-native';
 import colors from '../utils/colors';
+// import peppa from '../images/peppa.png';
 
 
 // import { getCardStyle } from '../../utils/helpers';
 // import './card.css';
 
-const Card = (props) => {
+class Card extends Component {
+
+  state = {
+    rotateAnim: new Animated.Value(0)
+  }
+
+  onClickCard = () => {
+    console.log(this.state.rotateAnim)
+    Animated.timing(
+      this.state.rotateAnim,
+      {
+        toValue: (this.state.rotateAnim._value === 0) ? 1 : 0,
+        duration: 300
+      }
+    ).start();
+  }
+
+
+
   // const { card, handleCardClick } = props;
   // const style = getCardStyle(card)
-  return (
-    <View style={styles.card}>
-      <Text>{props.word}</Text>
-    </View>
-  );
+  render () {
+    const rotateY = this.state.rotateAnim.interpolate({
+      inputRange: [0, 1],
+      outputRange: ['0deg', '180deg']
+    });
+
+    return (
+      <TouchableOpacity onPress={this.onClickCard} style={styles.card} >
+        <Animated.View style={[styles.card, {transform: [{ rotateY }]}]}>
+          <Image
+            source={require('../images/peppa.png')}
+            style={styles.image}
+          />
+        </Animated.View>
+      </TouchableOpacity>
+    );
+  }
 };
 
 const styles = StyleSheet.create({
   card: {
     flex: 1,
     margin: 1,
-  	backgroundColor: colors.blue,
+  	backgroundColor: colors.white,
+  },
+  image: {
+    flex: 1,
+    resizeMode: 'contain',
+    width: null,
+    height: null
   }
 })
 
