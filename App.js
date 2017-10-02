@@ -6,6 +6,7 @@ import { Provider } from 'react-redux';
 import Header from './components/Header';
 import ShuffleButton from './components/ShuffleButton';
 import GameContainer from './components/GameContainer';
+import CardRow from './components/CardRow';
 
 export default class App extends React.Component {
   render() {
@@ -15,7 +16,12 @@ export default class App extends React.Component {
           <Header title="Memory Game"/>
           <View style={{flex: 10}}>
             <ShuffleButton/>
-            <GameContainer/>
+            <GameContainer>
+              <CardRow/>
+              <CardRow/>
+              <CardRow/>
+              <CardRow/>
+            </GameContainer>
           </View>
           {/* <Text>Open up App.js to start working on your app!</Text>
           <Text>Changes you make will automatically reload.</Text>

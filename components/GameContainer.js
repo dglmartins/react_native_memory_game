@@ -15,8 +15,9 @@ const styles = StyleSheet.create({
     margin: 25,
     height: 5,
   	backgroundColor: colors.pink,
+    flexDirection: "column",
   }
-})
+});
 
 
 export default GameContainer;

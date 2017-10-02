@@ -22,6 +22,6 @@ const styles = StyleSheet.create({
     textAlign: 'center',
     color: colors.white
   }
-})
+});
 
 export default ShuffleButton;
