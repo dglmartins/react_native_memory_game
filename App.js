@@ -3,7 +3,9 @@ import { StyleSheet, Text, View } from 'react-native';
 import { createStore } from 'redux';
 import { Provider } from 'react-redux';
 // import reducer from './reducers';
-import Header from './components/Header'
+import Header from './components/Header';
+import ShuffleButton from './components/ShuffleButton';
+import GameContainer from './components/GameContainer';
 
 export default class App extends React.Component {
   render() {
@@ -11,6 +13,10 @@ export default class App extends React.Component {
       // <Provider store={createStore(reducer)}>
         <View style={styles.container}>
           <Header title="Memory Game"/>
+          <View style={{flex: 10}}>
+            <ShuffleButton/>
+            <GameContainer/>
+          </View>
           {/* <Text>Open up App.js to start working on your app!</Text>
           <Text>Changes you make will automatically reload.</Text>
           <Text>Shake your phone to open the developer menu.</Text> */}
@@ -24,8 +30,8 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: '#fff',
-    flexDirection: 'row',
-    alignItems: 'flex-start',
-    justifyContent: 'center',
+    flexDirection: 'column',
+    alignItems: 'stretch',
+    justifyContent: 'flex-start',
   },
 });
