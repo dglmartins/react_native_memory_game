@@ -25,7 +25,7 @@ const generateInitialCardsState = (shuffledArray) => {
     const newCard = {
     [`card${idNum + 1}`]: {
         id: `card${idNum + 1}`,
-        style: {backgroundImage: null, transform: 'rotateY(0deg)'},
+        style: {backgroundImage: null, transform: 0},
         cardCharacter: shuffledArray[index]
       }
     };
@@ -75,20 +75,20 @@ export const getCardStyle = (card) => {
   }
 };
 
-export const hasChosenFirstAndCardDown = (status, transform) => (status === 'CHOOSING_FIRST' && transform === 'rotateY(0deg)');
-export const hasChosenSecondAndCardDown = (status, transform) => (status === 'CHOOSING_SECOND' && transform === 'rotateY(0deg)');
+export const hasChosenFirstAndCardDown = (status, transform) => (status === 'CHOOSING_FIRST' && transform === 0);
+export const hasChosenSecondAndCardDown = (status, transform) => (status === 'CHOOSING_SECOND' && transform === 0);
 export const isMatch = (card1, card2) => (card1.cardCharacter === card2.cardCharacter);
 export const areAllMatched = (matchCount, cardCount) => (matchCount === cardCount / 2);
 
-export const turnOneCardUp = ({ showCard, rotateCard180 }, cardId) => {
-  showCard(cardId);
-  rotateCard180(cardId);
-};
-
-export const turnOneCardDown = ({ hideCard, rotateCard0 }, cardId) => {
-  hideCard(cardId);
-  rotateCard0(cardId);
-};
+// export const turnOneCardUp = ({ showCard, rotateCard180 }, cardId) => {
+//   showCard(cardId);
+//   rotateCard180(cardId);
+// };
+//
+// export const turnOneCardDown = ({ hideCard, rotateCard0 }, cardId) => {
+//   hideCard(cardId);
+//   rotateCard0(cardId);
+// };
 
 export const resetGameAndShuffleDeck = ({ resetClickControl, shuffleDeck, animateShuffle }) => {
   resetClickControl();

@@ -30,17 +30,16 @@ const styles = StyleSheet.create({
     alignSelf: "stretch",
     margin: 25,
     height: 5,
-  	backgroundColor: colors.pink,
+  	backgroundColor: colors.white,
     flexDirection: "column",
   }
 });
 
-function mapStateToProps({ cards, clickControl }) {
+function mapStateToProps({ cards }) {
   return {
     cards: Object.keys(cards).map((key) => (
       cards[key]
-    )),
-    clickControl
+    ))
   }
 }
 

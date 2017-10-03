@@ -4,6 +4,13 @@ export const STORE_CARD_TO_CHECK_MATCH = 'STORE_CARD_TO_CHECK_MATCH';
 export const CHECKING_MATCH = 'CHECKING_MATCH';
 export const INCREMENT_MATCH = 'INCREMENT_MATCH';
 export const RESET_CLICK_CONTROL = 'RESET_CLICK_CONTROL';
+export const SHUFFLING_DECK = 'SHUFFLING_DECK';
+
+export function shufflingDeck () {
+  return {
+    type: SHUFFLING_DECK,
+  };
+};
 
 export function choosingFirst () {
   return {

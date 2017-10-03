@@ -20,30 +20,31 @@ export function cards (state = initialState, action) {
 
     case SHUFFLE_DECK:
       return generatedShuffledDeck(arrayOfCharacters);
-
-    case ROTATE_CARD_180:
-      return {
-        ...state,
-        [cardId]: {
-          ...state[cardId],
-          style: {
-            ...state[cardId].style,
-            transform: "rotateY(180deg)"
-          }
-        }
-      };
-
-    case ROTATE_CARD_0:
-      return {
-        ...state,
-        [cardId]: {
-          ...state[cardId],
-          style: {
-            ...state[cardId].style,
-            transform: "rotateY(0deg)"
-          }
-        }
-      };
+    // 
+    // case ROTATE_CARD_180:
+    // console.log("i get called")
+    //   return {
+    //     ...state,
+    //     [cardId]: {
+    //       ...state[cardId],
+    //       style: {
+    //         ...state[cardId].style,
+    //         transform: 0.5
+    //       }
+    //     }
+    //   };
+    //
+    // case ROTATE_CARD_0:
+    //   return {
+    //     ...state,
+    //     [cardId]: {
+    //       ...state[cardId],
+    //       style: {
+    //         ...state[cardId].style,
+    //         transform: 0
+    //       }
+    //     }
+    //   };
 
     case SHOW_CARD:
       return {
@@ -75,7 +76,7 @@ export function cards (state = initialState, action) {
           ...card,
           style: {
             ...card.style,
-            transform: `rotateY(${degrees}deg)`
+            transform: degrees
           }
         };
       };

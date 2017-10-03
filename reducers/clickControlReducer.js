@@ -4,12 +4,13 @@ import {
   STORE_CARD_TO_CHECK_MATCH,
   CHECKING_MATCH,
   INCREMENT_MATCH,
-  RESET_CLICK_CONTROL
+  RESET_CLICK_CONTROL,
+  SHUFFLING_DECK
 } from '../actions/clickControlActions';
 
 const initialState = {
   matchCount: 0,
-  status: 'CHOOSING_FIRST',
+  status: 'SHUFFLING_DECK',
   cardToCheckMatch: null
 };
 
@@ -22,6 +23,11 @@ export function clickControl (state = initialState, action) {
         status: type
       };
     case CHOOSING_SECOND:
+      return {
+        ...state,
+        status: type
+      };
+    case SHUFFLING_DECK:
       return {
         ...state,
         status: type
